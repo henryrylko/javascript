@@ -1,0 +1,99 @@
+/* These are notes from Eloquent JavaScript */
+
+Chapter 1: VALUES, TYPES and OPERATORS
+
+There are six basic types of values in JavaScript:
+    1. numbers
+    2. strings
+    3. booleans
+    4. objects
+    5. functions
+    6. undefined values
+
+JavaScript uses 64 bits to store a numeric value.
+
+% is the remainder operator
+
+There are three special values that are considered numbers:
+    1. Infinity
+    2. -Infinity
+    3. NaN (not a number)
+
++ is the concatenate operator when applied to strings.
+
+The typeof operator produces a string value naming the type of value.
+
+JavaScript has a Boolean type with the values:
+    1. true
+    2. false
+
+There is only one value in JavaScript that is not equal to itself, NaN.
+
+JavaScript supports three logical operators:
+    1. and (&&)
+    2. or (||)
+    3. not (!)
+
+Conditional (ternary) Operator ?:
+
+Undefined Values:
+    1. null
+    2. undefined
+
+The === and !=== operators compare type and value whereas == and != use type coercion.
+
+The &&, || and ?: operators are short-circuited.
+
+
+Chapter 2: PROGRAM STRUCTURE
+
+A fragment of code that produces a value is called an expression.
+
+A program is simply a list of statements.
+
+The simples kind of statement is an expression with a semicolon after it.
+
+To catch and hold values, JavaScript provides a thing called a variable.
+
+A variable name cannot include puctuation, except for the characters $ and _.
+
+A single var statement may define multiple variables.  The definitions must be separated by commas.
+
+The following is a list of reserved or keywords:
+
+    break case catch class const continue debugger
+    default delete do else enum export extends false
+    finally for function if implements import in
+    instanceof interface let new null package private
+    protected public return static super switch this
+    throw true try typeof var void while with yield
+
+The collection of variables and their values that exist at a given time is called the environment.
+
+A function is a piece of program wrapped in a value.
+
+Executing a function is called invoking, calling, or applying it.
+
+You can call a function by putting parentheses after an expression that produces a function value.  The values between parentheses are given to the program inside the function.  Values given to functions are called arguments.
+
+A sequence of statments wrapped in braces is called a block.
+
+The do/while loop is a control structure similar to the while loop with its test at the end.
+
+JavaScript also has a standard for loop.
+
+There is a special statement called break that has the effect of immediately jumping out of the enclosing loop.
+
+When continue is encountered in a loop body, control jumps out of the body and continues with the loop's next iteration.
+
+JavaScript has a switch statement.
+
+Camelcase is commonly used for JavaScript identifiers.  Constructor functions are usually capitalized.
+
+Single-line comments use two slash characters (//).
+
+Block comments are delimited with /* and */.
+
+
+Chapter 3:  FUNCTIONS
+
