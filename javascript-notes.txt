@@ -97,3 +97,43 @@ Block comments are delimited with /* and */.
 
 Chapter 3:  FUNCTIONS
 
+The parameters to a function behave like regular variables, but their initial values are given by the caller of the function, not the code in the function itself.
+
+An important property of functions is that the variables created inside of them, including their parameters, are local to the function.
+
+This "localness" of variables applies only to the parameters and to variables declared with the var keyword inside the function body.  Variables declared outside of any function are call global, because they are visible throughout the program.
+
+Each local scope can also sell all the local scopes that contain it.
+
+In JavaScript, functions are the only things that create a new scope.  Blocks do NOT create a new scope.
+
+The next version of JavaScript will introduce a let keyword, which works like var but creates a variable that is local to the enclosing block, not the enclosing function.
+
+Function variables usually simply act as names for a specific piece of the program.  Such a variable is defined once and never changed.  This makes it easy to start confusing the function and its name.
+
+A function value can do all the things that other values can do.  Similarly, a variable that holds a function is still just a regular variable and can be assigned a new value.
+
+There is a slightly shorter way to say
+
+    var square = function(x) { return x * x; }
+
+The function keyword can also be used at the start of the statement, as in the following:
+
+    function square(x) {
+        return x * x;
+    }
+
+This is a function declaration.  Function declarations are not part of the regular top-to-bottom flow of control.  They are conceptually moved to the top of their scope and can be used by all the code in that scope.  Only use function declarations in the outermost block of a function or program.
+
+Because a function has to jump back to the place of the call when it returns, the computer must remember the context from which the function was called.  The place where the computer stores this context is the call stack.  Every time a function is called, the current context is put on top of this stack.  When the function returns, it removes the top context from the stack and uses it to continue execution.
+
+JavaScript is extrememly broad-minded about the number of arguments you pass to a function.  If you pass too many, the extra ones are ignored.  If you pass too few, the missing parameters simply get assigned the value undefined.
+
+Being able to reference a specific instance of local variable in an enclosing function -- is called closure.  A function that closes over some local variables is called a closure.  A parameter is itself a local variable.
+
+Don't worry about efficiency until you know for sure that the program is too slow.  If it is, find out which parts are taking up the most time, and start exchanging elegance for efficiency in those parts.
+
+A pure function is a specific kind of value-producing function that not only has no side effects but also doesn't rely on side effects from other code -- for example, it doesn't read global variables that are occasionally changed by other code.  A pure function has the pleasant property that, when called with the same arguments, it always produces the same value (and doesn't do anything else).  A call to such a fucntion can be metally substituted by its result, without changing the meaning of the code.
+
+
+
