@@ -23,7 +23,7 @@ There are three special values that are considered numbers:
 
 \+ is the concatenate operator when applied to strings.
 
-The typeof operator produces a string value naming the type of value.
+The `typeof` operator produces a string value naming the type of value.
 
 JavaScript has a Boolean type with the values:
    
