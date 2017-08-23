@@ -13,40 +13,41 @@ There are six basic types of values in JavaScript:
 
 JavaScript uses 64 bits to store a numeric value.
 
-% is the remainder operator
+_%_ is the remainder operator
 
 There are three special values that are considered numbers:
     
-1. Infinity
-1. -Infinity
-1. NaN (not a number)
+1. _Infinity_
+1. _-Infinity_
+1. _NaN_ (not a number)
 
-\+ is the concatenate operator when applied to strings.
+_+_ is the concatenate operator when applied to strings.
 
-The `typeof` operator produces a string value naming the type of value.
+The _typeof_ operator produces a string value naming the type of value.
 
-JavaScript has a Boolean type with the values:
+JavaScript has a _Boolean_ type with the values:
    
-1. true
-1. false
+1. _true_
+1. _false_
 
-There is only one value in JavaScript that is not equal to itself, NaN.
+There is only one value in JavaScript that is not equal to itself, _NaN_.
 
 JavaScript supports three logical operators:
     
-1. and (&&)
-1. or (||)
-1. not (!)
+1. and (_&&_)
+1. or (_||_)
+1. not (_!_)
 
-Conditional (ternary) Operator ?:
+Conditional (ternary) Operator _?:_
 
 Undefined Values:
-1. null
-1. undefined
 
-The === and !=== operators compare type and value whereas == and != use type coercion.
+1. _null_
+1. _undefined_
 
-The &&, || and ?: operators are short-circuited.
+The _===_ and _!==_ operators compare type and value whereas _==_ and _!=_ use type coercion.
+
+The _&&_, _||_ and _?:_ operators are short-circuited.
 
 
 ## Chapter 2: PROGRAM STRUCTURE
