@@ -21,7 +21,7 @@ There are three special values that are considered numbers:
 1. -Infinity
 1. NaN (not a number)
 
-+ is the concatenate operator when applied to strings.
+\+ is the concatenate operator when applied to strings.
 
 The typeof operator produces a string value naming the type of value.
 
