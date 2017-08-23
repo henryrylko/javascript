@@ -3,6 +3,7 @@
 ## Chapter 1: VALUES, TYPES and OPERATORS
 
 There are six basic types of values in JavaScript:
+
     1. numbers
     1. strings
     1. booleans
@@ -15,6 +16,7 @@ JavaScript uses 64 bits to store a numeric value.
 % is the remainder operator
 
 There are three special values that are considered numbers:
+    
     1. Infinity
     2. -Infinity
     3. NaN (not a number)
@@ -24,12 +26,14 @@ There are three special values that are considered numbers:
 The typeof operator produces a string value naming the type of value.
 
 JavaScript has a Boolean type with the values:
+   
     1. true
     2. false
 
 There is only one value in JavaScript that is not equal to itself, NaN.
 
 JavaScript supports three logical operators:
+    
     1. and (&&)
     2. or (||)
     3. not (!)
