@@ -17,9 +17,9 @@ JavaScript uses 64 bits to store a numeric value.
 
 There are three special values that are considered numbers:
     
-    1. Infinity
-    2. -Infinity
-    3. NaN (not a number)
+1. Infinity
+1. -Infinity
+1. NaN (not a number)
 
 + is the concatenate operator when applied to strings.
 
@@ -27,22 +27,22 @@ The typeof operator produces a string value naming the type of value.
 
 JavaScript has a Boolean type with the values:
    
-    1. true
-    2. false
+1. true
+1. false
 
 There is only one value in JavaScript that is not equal to itself, NaN.
 
 JavaScript supports three logical operators:
     
-    1. and (&&)
-    2. or (||)
-    3. not (!)
+1. and (&&)
+1. or (||)
+1. not (!)
 
 Conditional (ternary) Operator ?:
 
 Undefined Values:
-    1. null
-    2. undefined
+1. null
+1. undefined
 
 The === and !=== operators compare type and value whereas == and != use type coercion.
 
