@@ -4,12 +4,12 @@
 
 There are six basic types of values in JavaScript:
 
-    1. numbers
-    1. strings
-    1. booleans
-    1. objects
-    1. functions
-    1. undefined values
+1. numbers
+1. strings
+1. booleans
+1. objects
+1. functions
+1. undefined values
 
 JavaScript uses 64 bits to store a numeric value.
 
