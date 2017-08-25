@@ -149,7 +149,7 @@ JavaScript provides a data type specifically for storing sequences of values.  I
 
 The notation for getting at the elements inside an array also uses square brackets.  A pair of square brackets immediately after an expression, with another expression inside of them, will look up the element in the left-hand expression that corresponds to the index given by the expression in brackets.  The first index of an array is zero.
 
-Almost all JavaScript values have properties.  The exceptions are null and undefined.  The two most common ways to access properties in JavaScript are with a dot and with square brackets.  Both value.x and value[x] access a property on value -- but not necessarily the same property.  The difference is in how x is interpreted.  When using a dot, the part after the dot must be a valid variable name, and it directly names the property.  When using square brackets, the expression between the brackets is evaluated to get the property name.  Property names can be any string.
+Almost all JavaScript values have properties.  The exceptions are null and undefined.  The two most common ways to access properties in JavaScript are with a dot and with square brackets.  Both `value.x`  and `value[x]` access a property on value -- but not necessarily the same property.  The difference is in how x is interpreted.  When using a dot, the part after the dot must be a valid variable name, and it directly names the property.  When using square brackets, the expression between the brackets is evaluated to get the property name.  Property names can be any string.
 
 The elements in an array are stored in properties.  Because the names of these properties are numbers, we have to use the bracket syntax to access them.
 

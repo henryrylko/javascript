@@ -1,10 +1,5 @@
-var f1 = function() {
-    x = 3;
-    f2();
-}
+var listOfNumbers = [2, 3, 5, 7, 11];
 
-var f2 = function() {
-    console.log("The value of x is %d", x);
-}
+console.log(listOfNumbers["length"]);
 
-f1();
+console.log(Math["max"](4, 2));
