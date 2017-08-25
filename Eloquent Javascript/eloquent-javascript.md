@@ -157,8 +157,100 @@ Properties that contain functions are generally called methods of the value they
 
 The push method can be used to add values to the end of an array.  The pop method does the opposite: it removes the value at the end of the array and returns it.  An array of strings can be flattened to a single string with the join method.  the argument given to join determines the text that is glued between the array's elements.
 
-One way to create an object is by using a curly brace notation:
+Values of the type *object* are arbitrary collections of properties, and we can add or remove these properties as we please. One way to create an object is by using a curly brace notation:
 
     var myObj = { key1: value1, key2: value2, ... keyN: valueN}
 
+Inside the curly braces, we can give a list of properties separated by commas.  Each property is written as a name, followed by a colon, followed by an expression that provides a value for the property.  Properties whose names are not valid variable names or valid numbers have to be quoted.
 
+This means that curly braces have *two* meanings in JavaScript.  At the start of a statement, they start a block of statements.  In any other position, they describe an object. 
+
+Reading a property that doesn't exist will produce the value `undefined`. 
+
+It is possible to assign a value to a property expression with the `=` operator.  This will replace the property's value if it already existed or create a new property on the object if it didn't.
+
+The `delete` operator is a unary operator that, when applied to a property access expression, will remove the named property from the object.
+
+The binary `in` operator, when applied to a string and an object, returns a Boolean value that indicates whether that object has that property.  The difference between setting a property to `undefined` and actually deleting it is that, in the first case, the object still *has* the property (it just doesn't have a very interesting value), whereas in the second case the property is no longer present and `in` will return `false`.
+
+Arrays, then, are just a kind of object specialized for storing sequences of things.
+
+The types of values discussed in earlier chapters, such as numbers, strings, and Booleans, are all *immutable* -- it is impossible to change an existing value of those types.  You can combine them and derive new values from them, but when you take a specific string value, that value will always remain the same.  With objects, on the other hand, the content of a value *can* be modified by changinging its properties.
+
+With objects, there is a defference between having two references to the same object and having two different objects that contain the same properties.  Consider the following code:
+
+```javascript
+var object1 = {value: 10};
+var object2 = object1;
+var object3 = {value: 10};
+
+console.log(object1 == object2);
+// → true
+console.log(object1 == object3);
+// → false
+
+object1.value = 15;
+console.log(object2.value);
+// → 15
+console.log(object3.value);
+// → 10
+```
+
+The `object1` and `object2` variables grasp the `same` object, which is why changing `object1` also changes the value of `object2.`  The variable `object3` points to a different object, which initially contains the same properties as `object1` but lives a seperate life.
+
+JavaScript's `==` operator, when comparing objects, will return true only if both objects are precisely the same value.  Comparing different objects will return `false` even if they have identical contents.  There is no "deep" comparison operation build into JavaScript, which looks at object's contents.
+
+Arrays have an `indexOf` method that tries to find a given value in the array and returns the index at which it was found or -1 if it wasn't found.
+
+A *map* is a way to go from values in one domain to corresponding values in another domain.
+
+JavaScript provides a loop construct specifically for going over the properties of an object.  It looks like a normal `for` loop but distinguishes itself by the use of the word `in`.
+
+```javascript
+for (var event in map)
+  console.log("The correlation for '" + event +
+              "' is " + map[event]);
+// → The correlation for 'pizza' is 0.069
+// → The correlation for 'touched tree' is -0.081```
+```
+
+We saw `push` and `pop`, which add and remove elements at the end of an arry, earlier in this chapter.  The corresponding methods for adding and removing things at the start of an array are called `unshift` and `shift`.
+
+The `indexOf` method has a sibling called `lastIndexOf`, which starts searching for the given element at the end of the array instead of the front.  Both `indexOf` and `lastIndexOf` take an optional second argument that indicates where to start searching from.
+
+Another fundamental method is `slice`, which takes a start index and an end index and returns an array that has only the elements between those indices.  The start index is inclusive, the end index exclusive.
+
+```javascript
+console.log([0, 1, 2, 3, 4].slice(2, 4));
+// → [2, 3]
+console.log([0, 1, 2, 3, 4].slice(2));
+// → [2, 3, 4]
+```
+
+When the end index is not given, `slice` will take all of the elements after the start index.  Strings also have a `slice` method, which has a similar effect.
+
+The `concat` method can be used to glue arrays together, similar to what the `+` operator does for strings.
+
+Values of type string, number, and Boolean are not objects, and though the language doesn't complain if you try to set new properties on them, it doesn't actually store those properties.  The values are immutable and cannot be changed.
+
+A string's `indexOf` can take a string containing more than one character, whereas the corresponding array method loos only for a single element.
+
+The `trim` method removes whitespace (spaces, newlines, tabs, and similar characters) from the start and end of a string.
+
+Accessing the individual characters in a string can be done with the `charAt` method but also by simply reading numeric properties, like you would for an array.
+
+Whenever a function is called, a special variable named `arguments` is added to the environment in which the function body runs.  This variable refers to an object that holds all of the arguments passed to the function.  Remember that in JavaScript you are allowed to pass more (or fewer) arguments to a function than the number of parameters the function itself declares.
+
+The `arguments` object has a `length` property that tells us the number of arguments that were really passed to the function.  I also has a property for each argument, named 0, 1, 2, and so on.
+
+`Math` is a grab-bag of number-related utility functions, such as `Math.max` (maximum), `Math.min` (minimum), and `Math.sqrt` (square root).
+
+The `Math` object is used simply as a container to group a bunch of related functionality.  There is only one `Math` object, and it is almost never useful as a value.  Rather, it provides a *namespace* so that all these functions and values do not have to be global variables.
+
+`Math.random` is a function that returns a new pseudorandom number between zer(inclusive) and one (exclusive) every time you call it.
+
+`Math.floor` rounds down to the nearest whole number.  `Math.ceil` rounds up to the nearest whole number and `Math.round (to the nearest whole number).
+
+The global scope, the space in which global variables live, can also be approached as an object in JavaScript.  Each global variable is present as a property of this object.  In browsers, the global scope object is stored in the `window` variable.
+
+ 
